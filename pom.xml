@@ -44,8 +44,56 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.17.2</version>
         </dependency>
-
-
     </dependencies>
-</project>
 
+    <build>
+        <finalName>kata7</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>software.ulpgc.kata7.web.WebMain</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>jpackage</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>jpackage</executable>
+                    <arguments>
+                        <argument>--name</argument>
+                        <argument>kata7</argument>
+
+                        <argument>--input</argument>
+                        <argument>target</argument>
+
+                        <argument>--main-jar</argument>
+                        <argument>kata7.jar</argument>
+
+                        <argument>--icon</argument>
+                        <argument>movie.ico</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
