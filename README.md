@@ -1,0 +1,2 @@
+# Kata7
+El objetivo de esta fase es el despliegue y la distribución del software. Voy a orquestar la construcción con Maven y, posteriormente, utilizaré jpackage para crear una imagen auticontenida de la aplicación. Esto me permitirá generar instaladores nativos específicos (como .exe o .dmg) desacoplados del entorno del usuario, entregando un producto profesional listo para producción en distintos sistemas operativos.
